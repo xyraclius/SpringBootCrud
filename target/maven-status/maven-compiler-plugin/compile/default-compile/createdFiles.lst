@@ -1,5 +1,0 @@
-com\nabil\springboot\model\Mahasiswa.class
-com\nabil\springboot\dao\MahasiswaDAO.class
-com\nabil\springboot\service\MahasiswaService.class
-com\nabil\springboot\controller\MahasiswaController.class
-com\nabil\springboot\SpringBootRunner.class

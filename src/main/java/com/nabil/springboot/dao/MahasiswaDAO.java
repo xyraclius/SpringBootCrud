@@ -6,15 +6,15 @@
 package com.nabil.springboot.dao;
 
 import com.nabil.springboot.model.Mahasiswa;
-import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+import com.nabil.springboot.service.MahasiswaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.nabil.springboot.service.MahasiswaService;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import java.util.List;
 
 /**
- *
  * @author Xyraclius
  */
 @Service
@@ -30,6 +30,7 @@ public class MahasiswaDAO implements MahasiswaService {
     @Override
     public List<Mahasiswa> listMahasiswa() {
         EntityManager em = emf.createEntityManager();
+
         return em.createQuery("from Mahasiswa", Mahasiswa.class).getResultList();
     }
 
@@ -42,6 +43,7 @@ public class MahasiswaDAO implements MahasiswaService {
         return saved;
     }
 
+
     @Override
     public Mahasiswa getIdMahasiswa(Integer id) {
         EntityManager em = emf.createEntityManager();
@@ -52,7 +54,7 @@ public class MahasiswaDAO implements MahasiswaService {
     public void hapus(Integer id) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.remove(em.find(Mahasiswa.class, id));     
+        em.remove(em.find(Mahasiswa.class, id));
         em.getTransaction().commit();
     }
 }

@@ -1,14 +1,15 @@
 package com.nabil.springboot.model;
 
-import java.io.Serializable;
-
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "Mahasiswa")
 public class Mahasiswa implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = 1L;
+	
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(name = "nama_mahasiswa")
@@ -17,7 +18,7 @@ public class Mahasiswa implements Serializable {
     private String nim;
 
     @Version
-    @Column(name = "opt_version", columnDefinition = "integer DEFAULT=0")
+    @Column(name = "opt_version", columnDefinition = "integer")
     private Integer version;
 
     public Integer getId() {

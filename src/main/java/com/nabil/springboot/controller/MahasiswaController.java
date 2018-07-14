@@ -42,7 +42,7 @@ public class MahasiswaController {
 
     @RequestMapping(value = "/mahasiswa/create", method = RequestMethod.POST)
     public String simpanDataMahasiswa(Model model, Mahasiswa mahasiswa) {
-        model.addAttribute(mservice.saveOrUpdate(mahasiswa));
+        mservice.saveOrUpdate(mahasiswa);
         return "redirect:/mahasiswa"; //Simpan Data
     }
 
